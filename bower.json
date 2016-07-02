@@ -1,0 +1,22 @@
+{
+  "name": "monoblog",
+  "homepage": "https://github.com/Wepoo/monoblog",
+  "authors": [
+    "Wepoo <yurkovetc@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.6"
+  }
+}
