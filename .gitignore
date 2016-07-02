@@ -1,0 +1,10 @@
+/.bundle
+
+/log/*
+!/log/.keep
+/tmp
+/public
+/config/database.yml
+
+# Ignore application configuration
+/config/application.yml
