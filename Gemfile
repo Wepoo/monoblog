@@ -10,6 +10,7 @@ gem 'puma'
 gem 'devise'
 gem 'haml'
 gem 'angular-rails-templates'
+gem 'angular_rails_csrf'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
