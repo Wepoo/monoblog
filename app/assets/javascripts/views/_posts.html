@@ -5,10 +5,16 @@
   <p>
     {{post.body}}
   </p>
-  
+  <div ng-show="isMyPosts(post)">
+    <button ng-click="updatePost(post)" class="btn btn-warning">Update</button>
+    <button ng-click="deletePost(post)" class="btn btn-danger">Delete</button>
+  </div>
 </div>
 
-<div ng-repeat="comment in post.comments">
+<div ng-repeat="comment in post.comments">  
+  <h4>
+    {{comment.user.email}}
+  </h4>
   <p style="font-size:20px; margin-left:10px;">
     {{comment.body}}
   </p>

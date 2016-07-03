@@ -13,7 +13,12 @@ function($stateProvider, $urlRouterProvider) {
         postPromise: ['posts', function(posts){
           return posts.getAll();
         }]
-      }
+      },
+      onEnter: ['$state', 'Auth', function($state, Auth) {
+        Auth.currentUser().then(function (){}, function(error) {
+          $state.go('home');
+        });
+      }]
     })
     .state('posts', {
       url: '/posts/{id}',
