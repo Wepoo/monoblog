@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h3>
+    {{post.title}}
+  </h3>
+  <p>
+    {{post.body}}
+  </p>
+  
+</div>
+
+<div ng-repeat="comment in post.comments">
+  <p style="font-size:20px; margin-left:10px;">
+    {{comment.body}}
+  </p>
+</div>
+<form ng-submit="addComment()"
+  style="margin-top:30px;">
+  <h3>Add a new comment</h3>
+
+  <div class="form-group">
+    <textarea
+    class="form-control"
+    placeholder="Comment"
+    ng-model="body"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Post</button>
+</form>
