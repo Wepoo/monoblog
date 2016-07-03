@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:create, :update, :destroy]
+  
   def index
     respond_with Post.all
   end
