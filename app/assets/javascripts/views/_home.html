@@ -6,8 +6,8 @@
   <span style="font-size:20px; margin-left:10px;">
     <a href="#/posts/{{post.id}}">
       {{post.title}}
-      {{post.id}}
     </a>
+    posted by <a ng-href="#/users/{{post.user.id}}">{{post.user.email}}</a>
     <p>
       <div class="col-lg-8" ng-click="update()">
         <textarea
@@ -19,8 +19,10 @@
       </div>
     </p>
   </span>
-  <button ng-click="updatePost(post)" class="btn btn-warning">Update</button>
-  <button ng-click="deletePost(post)" class="btn btn-danger">Delete</button>
+  <div ng-show="isMyPosts(post)">
+    <button ng-click="updatePost(post)" class="btn btn-warning">Update</button>
+    <button ng-click="deletePost(post)" class="btn btn-danger">Delete</button>
+  </div>
 </div>
 
 <form ng-submit="addPost()"
