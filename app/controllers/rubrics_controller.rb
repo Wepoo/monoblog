@@ -6,7 +6,7 @@ class RubricsController < ApplicationController
   end
 
   def create
-    respond_with Rubric.create(rubric_params)
+    respond_with(Rubric.create(rubric_params), location: rubrics_url)
   end
 
   private

@@ -12,5 +12,10 @@ function($http){
       });
     });
   };
+  o.create = function(rubric) {
+    return $http.post('/rubrics.json', rubric).success(function(data){
+      o.rubrics.push(data);
+    });
+  };
   return o;
 }]);

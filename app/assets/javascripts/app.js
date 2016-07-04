@@ -1,4 +1,4 @@
-angular.module('monoblog', ['ui.router', 'templates', 'Devise'])
+angular.module('monoblog', ['ui.router', 'ui.select', 'ngSanitize', 'templates', 'Devise', 'ui.bootstrap'])
 .config([
 '$stateProvider',
 '$urlRouterProvider',
