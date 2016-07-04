@@ -16,9 +16,27 @@ function($scope, posts, rubrics, $state, $uibModal, $log, Auth){
   $scope.data = {
     rubric: $
   };
+
+  // Pagination
+  // $scope.itemsPerPage = 10;
+  // $scope.currentPage = 1;
+
+  // $scope.pageCount = function () {
+  //   return Math.ceil($scope.posts.length / $scope.itemsPerPage);
+  // };
+  
+  // $scope.posts.$promise.then(function () {
+  //   $scope.totalItems = $scope.posts.length;
+  //   $scope.$watch('currentPage + itemsPerPage', function() {
+  //     var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
+  //       end = begin + $scope.itemsPerPage;
+
+  //     $scope.filteredFriends = $scope.posts.slice(begin, end);
+  //   });
+  // });
+
   $scope.addPost = function(){
     if(!$scope.title || $scope.title === '') { return; }
-    debugger
     posts.create({ 
       title: $scope.title,
       body: $scope.body
@@ -47,6 +65,14 @@ function($scope, posts, rubrics, $state, $uibModal, $log, Auth){
       return false;
     }
   };
+  $scope.isAdmin = function() {
+    
+    if (Auth._currentUser && Auth._currentUser.role == 'admin' ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   $scope.openModal = function () {
     var modalInstance = $uibModal.open({
       templateUrl: 'views/modal/_rubricModalContent.html',
@@ -65,5 +91,5 @@ function($scope, posts, rubrics, $state, $uibModal, $log, Auth){
 
     }
   })
-
+  
 }]);
