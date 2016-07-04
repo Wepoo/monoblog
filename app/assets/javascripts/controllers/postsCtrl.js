@@ -18,7 +18,6 @@ function($scope, posts, post, $state, Auth){
     $scope.body = '';
   };
   $scope.isMyPosts = function(post){
-    debugger
     if (Auth._currentUser && Auth._currentUser.id == post.user.id ) {
       return true;
     } else {

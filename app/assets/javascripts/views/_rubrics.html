@@ -1,0 +1,11 @@
+<div class="collapse navbar-collapse" ng-controller="MainCtrl">
+  <div class="nav navbar-nav">
+    <h3 class="navbar-brand">Rubrics</h3>
+    <select ng-model="rubric">
+      <option ng-repeat="rubric in rubrics | filter:{title: ''}" value="{{rubric.id}}">{{rubric.title}}</option>
+    </select>
+    <select name="repeatSelect" id="repeatSelect" ng-model="rubric">
+      <option ng-repeat="rubric in rubrics" value="{{rubric.id}}">{{rubric.title}}</option>
+    </select>
+  </div>
+</div>

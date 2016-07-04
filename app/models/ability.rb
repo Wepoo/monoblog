@@ -6,7 +6,7 @@ class Ability
     if user.role == 'admin'
       can :manage, :all
     else
-      can [:update, :destroy], Post
+      can [:destroy], Post
     end
 
   end
