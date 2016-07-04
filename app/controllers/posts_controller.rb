@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update, :destroy]
   
   def index
-    respond_with Post.all
+    respond_with Post.includes(:user, :comments, :rubrics).all
   end
 
   def create
@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    respond_with Post.find(params[:id])
+    respond_with Post.includes(:user, :comments, :rubrics).find(params[:id])
   end
 
   def update

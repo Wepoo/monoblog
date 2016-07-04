@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :rubrics, only: [:create, :index]
 end

@@ -1,4 +1,4 @@
-angular.module('monoblog', ['ui.router', 'templates', 'Devise'])
+angular.module('monoblog', ['ui.router', 'ui.select', 'ngSanitize', 'templates', 'Devise', 'ui.bootstrap'])
 .config([
 '$stateProvider',
 '$urlRouterProvider',
@@ -12,6 +12,9 @@ function($stateProvider, $urlRouterProvider) {
       resolve: {
         postPromise: ['posts', function(posts){
           return posts.getAll();
+        }],
+        rubrics: ['rubrics', function(rubrics) {
+          return rubrics.getAll();
         }]
       },
       onEnter: ['$state', 'Auth', function($state, Auth) {
