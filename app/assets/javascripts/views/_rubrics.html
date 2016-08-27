@@ -1,8 +1,4 @@
-<div class="collapse navbar-collapse">
-  <div class="nav navbar-nav">
-    <h3 class="navbar-brand">Rubrics</h3>
-    <select ng-model="data.rubric">
-      <option ng-repeat="rubric in rubrics | filter:{title: ''}" value="{{rubric.id}}">{{rubric.title}}</option>
-    </select>
-  </div>
-</div>
+<h3>Rubrics</h3>
+<select ng-model="data.rubric" style="width:160px">
+  <option ng-repeat="rubric in rubrics | filter:{title: ''}" value="{{rubric.id}}">{{rubric.title}}</option>
+</select>

@@ -1,0 +1,19 @@
+.col-md-8 ng-controller="MainCtrl"
+  .page-header
+    h3
+      | {{post.title}}
+    p
+      | {{post.body}}
+    div ng-show="isMyPosts(post)" 
+      button.btn.btn-warning ng-click="updatePost(post)"  Update
+      button.btn.btn-danger ng-click="deletePost(post)"  Delete
+  div ng-repeat=("comment in post.comments") 
+    h4
+      | {{comment.user.email}}
+    p style=("font-size:20px; margin-left:10px;") 
+      | {{comment.body}}
+  form ng-submit="addComment()" style="margin-top:30px;" 
+    h3 Add a new comment
+    .form-group
+      textarea.form-control ng-model="body" placeholder="Comment" 
+    button.btn.btn-primary type="submit"  Post

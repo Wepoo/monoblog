@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: monoblog_development
+
+test: &test
+  <<: *default
+  database: monoblog_test
+
+production:
+  <<: *default
+  database: monoblog_production
+  username: monoblog
+  password: <%= ENV['MONOBLOG_DATABASE_PASSWORD'] %>

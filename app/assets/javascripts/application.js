@@ -6,4 +6,7 @@
 //= require angular-bootstrap
 //= require angular-ui-select
 //= require angular-sanitize
+//= require particles.js/particles.js
 //= require_tree .
+//=require_self
+

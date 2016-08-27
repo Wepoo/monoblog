@@ -1,0 +1,13 @@
+div ng-controller="MainCtrl"
+  form ng-submit="addPost()" style="margin-top:30px;"
+    h3 Add a new post
+    .form-group
+      input.form-control ng-model="title" placeholder="Title" type="text"
+    .form-group
+      textarea.form-control ng-model="body" placeholder="Your post"
+    .form-group
+      ui-select close-on-select="false" multiple="" ng-model="selected_post_rubrics" style="width: 300px;" theme="bootstrap" title="Choose a color"
+        ui-select-match placeholder="Select colors..."} {{$select.selected}
+        ui-select-choices repeat="rubric in rubrics | filter:$select.search"
+          | {{rubric.title}}
+    button.btn.btn-primary type="submit"  Post

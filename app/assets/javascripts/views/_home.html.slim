@@ -1,0 +1,18 @@
+div ng-controller="MainCtrl"
+  .col-md-9
+    .page-header
+      h1 MonoBlog
+    section
+      div ng-include="'views/_posts.html'"
+      /!
+        | <pagination total-items="totalItems" items-per-page="itemsPerPage"
+        | ng-model="currentPage" ng-change="pageChanged()"></pagination
+        | <p
+        | Total items: {{totalItems}}<br /
+        | Items per page: {{itemsPerPage}}<br /
+        | Current Page: {{currentPage}}
+        | </p>
+    div ng-include="'views/_form.html'"
+  .col-md-3
+    button.btn.btn-primary ng-click="openModal()" ng-show="isAdmin()"  Create new rubric
+    div ng-include="'views/_rubrics.html'"

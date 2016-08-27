@@ -15,3 +15,26 @@
  *= require_tree .
  *= require_self
  */
+
+/* ---- reset ---- */
+
+body {
+  background-color: #ebebeb;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  background-color: #ebebeb;
+  background-image: url("");
+  background-repeat: no-repeat;
+  
+  background-position: 30% 70%;
+}
